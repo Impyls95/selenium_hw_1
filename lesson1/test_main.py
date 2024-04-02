@@ -1,15 +1,12 @@
-import time
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import pytest
-
-browser = webdriver.Chrome()
+from data import login, password, main_page
 
 
 # Авторизация
-def test_auth_positive():
+def test_auth_positive(driver):
     browser = webdriver.Chrome()
     browser.get('https://www.saucedemo.com/')
 
