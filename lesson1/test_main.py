@@ -7,14 +7,12 @@ from data import login, password, main_page
 
 # Авторизация
 def test_auth_positive(driver):
-    browser = webdriver.Chrome()
-    browser.get('https://www.saucedemo.com/')
+    driver.get(main_page)
 
-    browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
-    browser.find_element(By.XPATH, '//*[@id="password"]').send_keys('secret_sauce')
-    browser.find_element(By.XPATH, '//*[@id="login-button"]').click()
-    assert browser.current_url == 'https://www.saucedemo.com/inventory.html', 'url не соответствует ожидаемому'
-    browser.quit()
+    driver.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
+    driver.find_element(By.XPATH, '//*[@id="password"]').send_keys('secret_sauce')
+    driver.find_element(By.XPATH, '//*[@id="login-button"]').click()
+    assert driver.current_url == 'https://www.saucedemo.com/inventory.html', 'url не соответствует ожидаемому'
 
 
 def test_auth_negative():
