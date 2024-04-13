@@ -4,12 +4,14 @@ from selenium.webdriver.common.by import By
 from data import user_login, password, main_page
 import locators
 
+
 @pytest.fixture()
 def driver():
     driver = webdriver.Chrome()
     yield driver
     print('\nquit browser...')
     driver.quit()
+
 
 @pytest.fixture()
 def login(driver):

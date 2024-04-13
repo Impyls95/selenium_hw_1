@@ -213,3 +213,13 @@ def test_check_button_reset_app_state(login):
     with pytest.raises(NoSuchElementException):
         driver.find_element(By.XPATH, locators.cart_badge)
         pytest.fail('Не должно быть товаров в корзине')
+
+
+# Чек бокс
+def test_check_box():
+    driver = webdriver.Chrome()
+    driver.get('https://victoretc.github.io/webelements_information/')
+    driver.find_element(By.CSS_SELECTOR, locators.check_login).send_keys('1')
+    driver.find_element(By.CSS_SELECTOR, locators.check_password).send_keys('1')
+
+    assert driver.find_element(By.CSS_SELECTOR, locators.check_reg_button).get_attribute('disabled')

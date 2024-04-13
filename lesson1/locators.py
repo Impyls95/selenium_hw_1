@@ -47,3 +47,9 @@ logout_link = '#logout_sidebar_link'
 about_link = '#about_sidebar_link'
 body = 'body'
 reset_link = '#reset_sidebar_link'
+
+
+# Чек бокс
+check_login = '#username'
+check_password = '#password'
+check_reg_button = '#registerButton'
