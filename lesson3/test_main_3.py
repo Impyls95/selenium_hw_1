@@ -60,3 +60,12 @@ def test_three(driver):     # С использованием time.sleep()
 
     time.sleep(5)
     assert driver.find_element(*successful_text).is_displayed()
+
+
+def test_visible_after_with_implicitly_waits(driver_impl):  # Implicit from Maria
+    driver_impl.get('https://victoretc.github.io/selenium_waits/')
+    driver_impl.find_element(By.XPATH, '//button[@id="startTest"]').click()
+    btn_login = (By.XPATH, '//label[@for="login"]')
+    btn_login_el = driver_impl.find_element(*btn_login)
+
+    assert btn_login_el.text == 'Логин:'

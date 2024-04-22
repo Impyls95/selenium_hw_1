@@ -15,4 +15,7 @@ successful_text = (By.XPATH, '//p[text()="Вы успешно зарегистр
 button_add_elem = (By.XPATH, '//button[text()="Add Element"]')
 button_delete = (By.XPATH, '//button[text()="Delete"]')
 successful_auth_heroku = (By.XPATH, '//*[@id="content"]/div/p')
-broken_image_locator = (By.XPATH, '//*[@id="content"]/div/img')
+image_locator = (By.XPATH, '//*[@id="content"]/div/img')
+no_image = (By.XPATH, '//*[text()="Not Found"]')
+btn_checkbox_1 = (By.XPATH, '//*[text()=" checkbox 1"]/input')
+btn_checkbox_2 = (By.XPATH, '//*[@id="checkboxes"]/input[2]')

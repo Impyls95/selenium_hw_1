@@ -1,4 +1,5 @@
 import pytest
+import requests
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
@@ -34,7 +35,25 @@ def test_basic_auth(driver, wait):    # Необходимо пройти баз
 
 def test_find_broken_image(driver):  # Необходимо найти сломанные изображения
     driver.get(site_heroku + 'broken_images')
-    broken_images = driver.find_elements(*broken_image_locator)
-    for i in broken_images:
-        cl = i.click()
-        assert cl
+    images = driver.find_elements(*image_locator)
+    broken_src_out = []
+    for img in images:
+        image_url = img.get_attribute('src')
+        response = requests.head(image_url)
+        if response.status_code != 200:
+            broken_src_out.append(image_url)
+    print('Ссылки на сломанные изображения:', broken_src_out)
+
+
+def test_checkbox_practice(driver):  # Практика с чек боксами
+    driver.get(site_heroku + 'checkboxes')
+    checkbox_1 = driver.find_element(*btn_checkbox_1)
+    checkbox_2 = driver.find_element(*btn_checkbox_2)
+    assert not checkbox_1.get_attribute('checked')
+    assert checkbox_2.is_selected()
+
+    checkbox_1.click()
+    checkbox_2.click()
+    assert checkbox_1.is_selected()
+    assert not checkbox_2.get_attribute('checked')
+
