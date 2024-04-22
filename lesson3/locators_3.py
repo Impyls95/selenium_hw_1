@@ -19,3 +19,18 @@ image_locator = (By.XPATH, '//*[@id="content"]/div/img')
 no_image = (By.XPATH, '//*[text()="Not Found"]')
 btn_checkbox_1 = (By.XPATH, '//*[text()=" checkbox 1"]/input')
 btn_checkbox_2 = (By.XPATH, '//*[@id="checkboxes"]/input[2]')
+
+# https://www.selenium.dev/selenium/web/dynamic.html
+add_box = (By.CSS_SELECTOR, '#adder')
+box_0_locator = (By.CSS_SELECTOR, '#box0')
+box_1_locator = (By.CSS_SELECTOR, '#box1')
+btn_reveal_input = (By.CSS_SELECTOR, '#reveal')
+revealed_inp = (By.CSS_SELECTOR, '#revealed')
+
+# https://demoqa.com/dynamic-properties
+enable_after = (By.CSS_SELECTOR, '#enableAfter')
+visible_after = (By.CSS_SELECTOR, '#visibleAfter')
+
+# https://the-internet.herokuapp.com/dynamic_loading
+start_dyn_load = (By.CSS_SELECTOR, '#start > button')
+finish_locator = (By.CSS_SELECTOR, '#finish')
