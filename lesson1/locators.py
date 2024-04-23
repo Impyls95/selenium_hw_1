@@ -52,4 +52,5 @@ reset_link = '#reset_sidebar_link'
 # Чек бокс
 check_login = '#username'
 check_password = '#password'
+check_box_loc = '#agreement'
 check_reg_button = '#registerButton'

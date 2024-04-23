@@ -224,3 +224,5 @@ def test_check_box():
     browser.find_element(By.CSS_SELECTOR, locators.check_password).send_keys('1')
 
     assert browser.find_element(By.CSS_SELECTOR, locators.check_reg_button).get_attribute('disabled')
+    browser.find_element(By.CSS_SELECTOR, locators.check_box_loc).click()
+    assert browser.find_element(By.CSS_SELECTOR, locators.check_reg_button).is_enabled()
