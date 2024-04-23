@@ -44,3 +44,5 @@ def test_dynamic_loading_1(driver, wait):
 def test_dynamic_loading_2(driver, wait):
     driver.get('https://the-internet.herokuapp.com/dynamic_loading/2')
     driver.find_element(*start_dyn_load).click()
+    load_elem = wait.until(EC.visibility_of_element_located(finish_locator_2))
+    assert load_elem.is_displayed()

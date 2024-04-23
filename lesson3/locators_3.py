@@ -34,3 +34,4 @@ visible_after = (By.CSS_SELECTOR, '#visibleAfter')
 # https://the-internet.herokuapp.com/dynamic_loading
 start_dyn_load = (By.CSS_SELECTOR, '#start > button')
 finish_locator = (By.CSS_SELECTOR, '#finish')
+finish_locator_2 = (By.XPATH, '//*[text()="Hello World!"]')
